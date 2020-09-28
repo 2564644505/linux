@@ -1,0 +1,19 @@
+pwd 显示工作目录
+man或者help加命令 显示命令说明
+echo $PATH 环境变量
+ls  -l详细信息 -a所有信息 -al所有文件包括系统文件
+gcc -E 预编译  .i文件  -S汇编 .s文件 -o 输出可执行文件 -g编译后的可执行文件可以被gdb动态调试
+objdump -d 反汇编
+cat -n查看assci文本
+vim gedit 编写文本
+more
+less
+cp 拷贝
+readelf 读取elf可执行文件
+gcc -E 1-1.c > 1-1.i 输出转项
+gcc -E 1-1.c >> 1-1.i 输出转项追加方式
+2> 出错转项
+
+cd ～ home目录下
+
+stdin 0 stdout 1 stderr 2
