@@ -1,0 +1,30 @@
+who 查看当前用户
+cal 查看日期
+time 查看时间
+ls -al 
+echo "hello" 输出字符串到控制台
+man echo 查看echo命令帮助
+file .ssh 查看.ssh文件详情
+sudo mkdir week2 
+pwd week2 查看当前路径
+sudo vi 2-1.sh
+file 2-1.sh
+sudo chmod 777 2-1.sh 授权
+ls -l 2-1.sh
+./2-1.sh
+strace ./hello 可以看可执行程序执行的全过程（调试工具）
+sleep 300|sleep 500& sleep程序
+pgrep -l sleep pgrep命令是用于搜索关键字为   的程序
+ls /proc 显示进程详情
+ll /proc/7233/fd 显示进程号为7233进程的fd
+ll /proc/7234/fd
+kill 7233 杀死进程号为7233的进程
+pgrep -ll 2-3
+ls /proc/7419/fd
+ll /proc/7419/fd
+ps  显示进程瞬间进程的状态  
+ps -ef 
+kill 7419
+ps -ef
+
+
