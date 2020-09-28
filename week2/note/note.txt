@@ -1,0 +1,30 @@
+1.ls -l命令前10列为类型+权限
+第1列：普通文件 -> - 目录文件 -> d 链接文件 -> l 字符设备文件 -> c 块文件 -> b 管道文件 -> p
+第2--10列（权限）
+文件主用户  同组用户    其他人
+rwx         rw-         r--
+r:只读  w：可写     x：可执行
+111         110         100
+
+2.目录
+结构：文件名 大小 链接 权限 时间 index-node号
+index-node由index块号和物理块号组成
+
+3.目录和文件存放
+MBR 主引导（空闲块） 连续目录块 index-node块
+
+4.ext3
+文件系统：由字符路径转化为i-node节点号->物理地址
+目录文件：从路径中取关键字检索出i-node号，由index-node（索引节点）完成安全，权限检测，通过地址表找出物理块
+
+5. shell->sleep 300|sleep 400
+进程通过管道文件通信
+sleep 300 
+0 stdin 
+1 stdout->pipe
+2 stderr
+
+sleep 400
+0 stdin->pipe
+1 stdout
+2 stderr
