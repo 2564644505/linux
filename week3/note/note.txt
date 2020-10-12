@@ -1,0 +1,41 @@
+FILE *fopen(const char *pathname, const char *mode);
+The fopen() function opens the file whose name is the string pointed to
+by pathname and associates a stream with it.
+The argument mode points to a string beginning with one of the  follow‐ing sequences(r,r+,w,w+,a,a+)
+FILE *fdopen(int fd, const char *mode);
+The fdopen() function  associates  a  stream  with  the  existing  file descriptor,  fd.   The mode of the stream (one of the values "r", "r+","w", "w+", "a", "a+") must be compatible with  the  mode  of  the  file descriptor.   The  file  position indicator of the new stream is set to that belonging to fd, and the  error  and  end-of-file  indicators  are cleared.   Modes  "w" or "w+" do not cause truncation of the file.  The file descriptor is not dup'ed, and will be closed when the stream  cre‐ ated  by  fdopen()  is  closed.   The  result of applying fdopen() to a shared memory object is undefined.
+
+FILE *freopen(const char *pathname, const char *mode, FILE *stream)
+ The freopen() function opens the file whose name is the string  pointed  to  by pathname and associates the stream pointed to by stream with it. The original stream (if it exists) is closed.   The  mode  argument  is used just as in the fopen() function.
+
+int scanf(const char *format, ...);
+int fscanf(FILE *stream, const char *format, ...);
+int sscanf(const char *str, const char *format, ...);
+
+int fputc(int c, FILE *stream);
+int fputs(const char *s, FILE *stream);
+int putc(int c, FILE *stream);
+int putchar(int c);
+int puts(const char *s);
+
+
+
+int fgetc(FILE *stream);
+char *fgets(char *s, int size, FILE *stream);
+int getc(FILE *stream);
+int getchar(void);
+int ungetc(int c, FILE *stream);
+ungetc()  pushes  c  back to stream, cast to unsigned char, where it is available for subsequent read operations.  Pushed-back characters  will be returned in reverse order; only one pushback is guaranteed.
+
+
+int printf(const char *format, ...);
+int fprintf(FILE *stream, const char *format, ...);
+int dprintf(int fd, const char *format, ...);
+The function dprintf() is the same as fprintf() except that it  outputs to a file descriptor, fd, instead of to a stdio stream.
+
+int sprintf(char *str, const char *format, ...);
+int snprintf(char *str, size_t size, const char *format, ...);
+
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
+ssize_t getdelim(char **lineptr, size_t *n, int delim, FILE *stream);
+
