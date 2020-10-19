@@ -6,9 +6,15 @@
  ************************************************************************/
 
 #include <stdio.h>
-#include <limits.h>
+#include <float.h>
 int main(void){
-  printf("int类型的最大值=%d\n",INT_MAX);
-  printf("int类型的最小值=%d\n",INT_MIN);
+  int a = 1;
+  a = a << sizeof(int)*8 - 1;
+  printf("int类型的最大值=%d\n",-a-1);
+  printf("int类型的最小值=%d\n",a);
+  printf("float类型的最大值=%e\n",FLT_MAX);
+  printf("float类型的最小值=%e\n",FLT_MIN);
+  printf("double类型的最大值=%e\n",DBL_MAX);
+  printf("double类型的最小值=%e\n",DBL_MIN);   
   return 0;
 }
