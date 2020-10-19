@@ -1,0 +1,27 @@
+/*************************************************************************
+    > File Name: wirte.c
+    > Author:何孝林
+    > Mail: 2564644505@qq.com 
+    > Created Time: Mon 19 Oct 2020 02:40:06 PM CST
+ ************************************************************************/
+
+#include "ch03.h"
+
+int main(void){
+  int n,fd;
+  char buf;
+  fd = open("./file.test",O_CREAT|O_RDWR,0644);
+  srand(time(0));
+  n = rand()%26;
+  buf = (char)('a' + n);
+  write(fd,&buf,1);
+  sleep(50);
+  lseek(fd,10,SEEK_SET);
+  srand(time(0));
+  n = rand();
+  buf = (char)('a' + n);
+  write(fd,&buf,1);
+  sleep(50);
+  close(fd);
+  return 0;
+}
